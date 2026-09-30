@@ -1,0 +1,24 @@
+-- Create database
+CREATE DATABASE IF NOT EXISTS sdc310_wk4pa DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE sdc310_wk4pa;
+
+-- Grant privileges to ecpi_user
+GRANT ALL PRIVILEGES ON sdc310_wk4pa.* TO 'ecpi_user'@'localhost';
+FLUSH PRIVILEGES;
+
+-- Create products table
+DROP TABLE IF EXISTS products;
+CREATE TABLE products (
+    ProductNo INT(11) NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(50) NOT NULL,
+    Type VARCHAR(50) NOT NULL,
+    PRIMARY KEY (ProductNo)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Insert 5 sample records
+INSERT INTO products (Name, Type) VALUES
+('Wireless Logistics Mouse', 'Hardware'),
+('Mechanical Gaming Keyboard', 'Hardware'),
+('27-Inch 4K Monitor', 'Peripherals'),
+('Database Management Suite', 'Software'),
+('Cloud Security Gateway', 'Networking');
