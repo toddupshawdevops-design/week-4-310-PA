@@ -1,0 +1,12 @@
+-- Create or update ecpi_user with password Password1
+CREATE USER IF NOT EXISTS 'ecpi_user'@'localhost' IDENTIFIED BY 'Password1';
+ALTER USER 'ecpi_user'@'localhost' IDENTIFIED BY 'Password1';
+
+-- Grant full privileges on sdc310_wk4pa database
+GRANT ALL PRIVILEGES ON sdc310_wk4pa.* TO 'ecpi_user'@'localhost';
+
+-- Grant full privileges on sdc310_wk3gp database (for GP1)
+GRANT ALL PRIVILEGES ON sdc310_wk3gp.* TO 'ecpi_user'@'localhost';
+
+-- Apply privilege updates
+FLUSH PRIVILEGES;
